@@ -14,5 +14,12 @@
 요청한 URI : <%= request.getRequestURI() %><br>
 서버의 이름 : <%= request.getServerName() %><br>
 포로토콜 : <%= request.getProtocol() %><br>
+<br>
+앱 서버 정보 : <%= application.getServerInfo() %>
+앱 컨텍스트 정보 : <%= application.getContextPath() %><br>
+앱 리얼패스 : <%= application.getRealPath("03_requestInfo.jsp") %><br>
+MIME 타입 : <%= application.getMimeType("바탕화면.jpg") %><br>
+
+
 </body>
 </html>
