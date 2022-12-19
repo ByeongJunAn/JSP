@@ -3,6 +3,14 @@
 	<name>Servers</name>
 	<comment></comment>
 	<projects>
+		<project>java</project>
+		<project>sec01</project>
+		<project>sec02</project>
+		<project>sec03</project>
+		<project>sec04</project>
+		<project>sec05</project>
+		<project>sec06</project>
+		<project>sec07</project>
 	</projects>
 	<buildSpec>
 	</buildSpec>
