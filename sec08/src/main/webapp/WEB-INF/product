@@ -1,9 +1,0 @@
-select * from member;
-
-create table product(
-	code int(5) primary key, 
-	name varchar(100),
-	price int(8),
-	pictureurl varchar(50),
-	description varchar(1000)
-);
