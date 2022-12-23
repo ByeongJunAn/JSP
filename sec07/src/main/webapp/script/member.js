@@ -60,4 +60,9 @@ function joinCheck() {
 		frm.pwd_check.focus();
 		return false;
 	}
-}	
+	if(document.reid.pwd.value != document.frm.reid.value){
+		alert("중복입니다.");
+		frm.reid.focus();
+		return false;
+	}	
+}
