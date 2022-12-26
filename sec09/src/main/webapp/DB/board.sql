@@ -9,4 +9,6 @@ create table board(
 	writedate datetime default current_timestamp on update current_timestamp
 );
 
-select *from board;
+insert into board values(null, "1234", "홍길동", "hong@abc.com", "게시글1번입니다.", "게시글 1번 홍길동이 남김", 0, 20221226);
+
+select * from board;

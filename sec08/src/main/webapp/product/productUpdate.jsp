@@ -9,9 +9,11 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록</title>
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 <script type="text/javascript" src="script/product.js"></script>
 </head>
 <body>
+<div id="wrap">
 <h1>상품수정 - 관리자페이지</h1>
 <form method="POST" action="productUpdate.do" name="frm" encType="multipart/form-data">
 	<input type="hidden" name="code" value="${product.code}">
@@ -82,5 +84,6 @@
 
 
 </form>
+</div>
 </body>
 </html>

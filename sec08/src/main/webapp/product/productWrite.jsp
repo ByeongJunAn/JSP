@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 등록</title>
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 <script type="text/javascript" src="script/product.js"></script>
 </head>
 <body>
+<div id="wrap">
 <h1>상품등록 - 관리자페이지</h1>
 <form method="POST" action="productWrite.do" name="frm" encType="multipart/form-data">
 	<table>
@@ -51,5 +53,6 @@
 
 
 </form>
+</div>
 </body>
 </html>

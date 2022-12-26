@@ -48,7 +48,7 @@ public class ProductUpdateServelt extends HttpServlet {
 		String code = multi.getParameter("code");
 		String name = multi.getParameter("name");
 		int price = Integer.parseInt(multi.getParameter("price"));
-		String pictureurl = multi.getParameter("pictureurl");
+		String pictureurl = multi.getFilesystemName("pictureurl");
 		String description = multi.getParameter("description");
 		
 		if(pictureurl == null) {

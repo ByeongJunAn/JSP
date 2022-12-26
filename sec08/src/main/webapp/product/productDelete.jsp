@@ -9,9 +9,10 @@
 <head>
 <meta charset="UTF-8">
 <title>delete product</title>
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 </head>
 <body>
-	
+	<div id="wrap">
 	<h1>상품 삭제 - 관리자페이지</h1>
 <form method="POST" action="productDelete.do">
 	<table>
@@ -71,6 +72,6 @@
 
 
 </form>
-	
+</div>
 </body>
 </html>

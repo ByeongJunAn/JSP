@@ -2,7 +2,7 @@ package com.keduit.dto;
 
 import java.sql.Timestamp;
 
-public class boardVO {
+public class BoardVO {
 	
 	private int	num; 
 	public int getNum() {
@@ -62,7 +62,7 @@ public class boardVO {
 	private Timestamp writedate;
 	@Override
 	public String toString() {
-		return "boardVO [num=" + num + ", pass=" + pass + ", name=" + name + ", email=" + email + ", title=" + title
+		return "BoardVO [num=" + num + ", pass=" + pass + ", name=" + name + ", email=" + email + ", title=" + title
 				+ ", content=" + content + ", readcount=" + readcount + ", writedate=" + writedate + "]";
 	} 
 	}

@@ -8,15 +8,18 @@
 <head>
 <meta charset="UTF-8">
 <title>상품 목록</title>
-
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 <style type="text/css">
 </style>
 
 </head>
 <body>
+<div id="wrap">
 	<h1>상품 리스트 - 관리자 페이지</h1>
-	<a href="productWrite.do">상품등록</a>
-	<table border="1">
+<div id="productWrite">
+	<a id="productWrite" href="productWrite.do">상품등록</a>
+</div>	
+	<table border="1" class="list">
 		<tr>
 			<th>번호</th>
 			<th>이름</th>
@@ -35,5 +38,6 @@
 		</c:forEach>
 
 	</table>
+	</div>
 </body>
 </html>
