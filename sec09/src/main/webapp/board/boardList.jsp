@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>게시글 목록 </title>
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 </head>
 <body>
 <div id="wrap">
@@ -32,9 +33,9 @@
 				<td><a href="BoardServlet?command=board_view&num=${board.num}">
 				${board.title}</a></td>
 				<td>${board.name}</td>
-				<td><fmt:formatDate value="${board.writedate}"/><td>
+				<td><fmt:formatDate value="${board.writedate}"/></td>
 				<td>${board.readcount}</td>
-		
+			</tr>
 		</c:forEach>
 		
 	</table>
