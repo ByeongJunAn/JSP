@@ -116,6 +116,10 @@
 			<Context docBase="sec09" path="/sec09" reloadable="true" source="org.eclipse.jst.jee.server:sec09">
 			<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/TestDB" password="0000" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/keduit" username="root"/>
 			</Context>
+			<Context docBase="sec10" path="/sec10" reloadable="true" source="org.eclipse.jst.jee.server:sec10">
+			<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/TestDB" password="0000" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/keduit" username="root"/>
+			</Context>
+			
 			</Host>
 		</Engine>
 	</Service>

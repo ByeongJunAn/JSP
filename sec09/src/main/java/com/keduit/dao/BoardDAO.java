@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.keduit.dto.BoardVO;
-
 import util.DBManager;
 
 public class BoardDAO {
@@ -74,6 +73,8 @@ public class BoardDAO {
 			pstmt.setString(3, bVO.getPass());
 			pstmt.setString(4, bVO.getTitle());
 			pstmt.setString(5, bVO.getContent());
+			
+			System.out.println(bVO.getPass() + "insertBoard");
 			pstmt.executeUpdate();
 			
 		}catch(Exception e) {
@@ -120,7 +121,7 @@ public class BoardDAO {
 	
 	//게시글 수정
 	public void updateBoard(BoardVO bVO) {
-		String sql = "upadte board set name=?, email=?, pass=?, title=?, content=? where num=?";
+		String sql = "update board set name=?, email=?, pass=?, title=?, content=? where num=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		
@@ -133,7 +134,7 @@ public class BoardDAO {
 			pstmt.setString(4, bVO.getTitle());
 			pstmt.setString(5, bVO.getContent());
 			pstmt.setInt(6, bVO.getNum());
-			
+		
 			pstmt.executeUpdate();
 			
 		}catch(Exception e) {
@@ -163,6 +164,23 @@ public class BoardDAO {
 			DBManager.close(conn, pstmt);
 		}
 		
+	}
+	
+	public void deleteBoard(String num) {
+		String sql = "delete from board where num=?";
+		Connection conn = null;
+		PreparedStatement pstmt= null;
+		
+		try {
+			conn= DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			pstmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			DBManager.close(conn, pstmt);
+		}
 	}
 	
 }
