@@ -4,7 +4,16 @@ import java.sql.Timestamp;
 
 public class BoardVO {
 	
-	private int	num; 
+	private int	num;
+	private String pass;
+	private String name; 
+	private String email;
+	private String title;
+	private String content; 
+	private int readcount; 
+	private Timestamp writedate;
+	
+	
 	public int getNum() {
 		return num;
 	}
@@ -53,13 +62,7 @@ public class BoardVO {
 	public void setWritedate(Timestamp writedate) {
 		this.writedate = writedate;
 	}
-	private String pass;
-	private String name; 
-	private String email;
-	private String title;
-	private String content; 
-	private int readcount; 
-	private Timestamp writedate;
+	
 	@Override
 	public String toString() {
 		return "BoardVO [num=" + num + ", pass=" + pass + ", name=" + name + ", email=" + email + ", title=" + title

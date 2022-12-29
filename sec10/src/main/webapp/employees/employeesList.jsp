@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>직원 목록 </title>
+<link rel="stylesheet" type="text/css" href="css/shopping.css">
 
 </head>
 <body>
@@ -32,7 +33,8 @@
 		<c:forEach var="employees" items="${employeesList}">
 			<tr>
 				<td>${employees.id}</td>
-				<td>${employees.name}</td>
+				<td><a href ="employeesServlet?command=employees_view&num=${board.num}">
+				${employees.name}</a></td>
 				<td>${employees.lev}</td>
 				<td>${employees.enter}</td>
 				<td>${employees.gender}</td>

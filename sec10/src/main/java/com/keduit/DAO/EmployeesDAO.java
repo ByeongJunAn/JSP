@@ -40,8 +40,8 @@ public class EmployeesDAO {
 				eVO.setPass(rs.getString("pass"));
 				eVO.setName(rs.getString("name"));
 				eVO.setLev(rs.getString("lev"));
-				eVO.setEnter(rs.getTimestamp("enter"));
-				eVO.setGender(rs.getBoolean("gender"));
+				eVO.setEnter(rs.getString("enter"));
+				eVO.setGender(rs.getString("gender"));
 				eVO.setPhone(rs.getInt("phone"));
 				list.add(eVO);
 				
@@ -74,8 +74,8 @@ public class EmployeesDAO {
 			pstmt.setString(2, eVO.getPass());
 			pstmt.setString(3, eVO.getName());
 			pstmt.setString(4, eVO.getLev());
-			pstmt.setTimestamp(5, eVO.getEnter());
-			pstmt.setBoolean(6, eVO.getGender());
+			pstmt.setString(5, eVO.getEnter());
+			pstmt.setString(6, eVO.getGender());
 			pstmt.setInt(7, eVO.getPhone());
 			
 		}catch(Exception e) {
@@ -86,5 +86,87 @@ public class EmployeesDAO {
 		
 	}
 	
+	//게시글 상세보기
+		public EmployeesVO selectOneEmployeesByID(String num) {
+			EmployeesVO bVO= null;
+			String sql = "select * from board where num = ?";
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, num);
+				rs= pstmt.executeQuery();
+				
+				while(rs.next()) {
+					bVO = new EmployeesVO();
+					bVO.setId(rs.getString("Id"));
+					bVO.setPass(rs.getString("pass"));
+					bVO.setName(rs.getString("name"));
+					bVO.setLev(rs.getString("lev"));
+					bVO.setEnter(rs.getString("enter"));
+					bVO.setGender(rs.getString("gender"));
+					bVO.setPhone(rs.getInt("phone"));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+			
+			return bVO;
+		}
+	
+		
+		//게시글 수정
+		public void updateBoard(EmployeesVO bVO) {
+			String sql = "update board set pass=?, name=?, lev=?, enter=?, gender=?, phone=? where id=?";
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			
+			try {
+				conn = DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, bVO.getPass());
+				pstmt.setString(2, bVO.getName());
+				pstmt.setString(3, bVO.getLev());
+				pstmt.setString(4, bVO.getEnter());
+				pstmt.setString(5, bVO.getGender());
+				pstmt.setInt(6, bVO.getPhone());
+				pstmt.setString(7, bVO.getId());
+		
+				pstmt.executeUpdate();
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt);
+			}
+			
+		}
+		
+						
+		public void deleteBoard(String id) {
+			String sql = "delete from employees where id=?";
+			Connection conn = null;
+			PreparedStatement pstmt= null;
+			
+			try {
+				conn= DBManager.getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				pstmt.executeUpdate();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				DBManager.close(conn, pstmt);
+			}
+		}
+		
 	}
+
+		
+
 	

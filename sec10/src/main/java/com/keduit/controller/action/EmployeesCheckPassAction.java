@@ -7,36 +7,33 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.keduit.dao.BoardDAO;
-import com.keduit.dto.BoardVO;
+import com.keduit.DAO.EmployeesDAO;
+import com.keduit.dto.EmployeesVO;
 
-public class BoardCheckPassAction implements Action {
+public class EmployeesCheckPassAction implements Action {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url=null;
 		
-		String num=request.getParameter("num");
+		String id=request.getParameter("id");
 		String pass=request.getParameter("pass");
 		
-		BoardDAO bDAO=BoardDAO.getInstance();
-		BoardVO bVO=bDAO.selectOneBoardByNum(num);
-		System.out.println(bVO);
-		if(bVO.getPass().equals(pass)) {
-			url ="/board/checkSuccess.jsp";
+		EmployeesDAO eDAO=EmployeesDAO.getInstance();
+		EmployeesVO eVO=eDAO.selectOneEmployeesByID(id);
+		
+		if(eVO.getPass().equals(pass)) {
+			url="/employees/checkSuccess.jsp";
 			
 		}else {
-			url="/board/boardCheckPass.jsp";
+			url="/employees/employeesCheckPAss.jsp";
 			request.setAttribute("message", "비밀번호가 틀렸습니다.");
 		}
-
-		RequestDispatcher dispatcher =request.getRequestDispatcher(url);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
-			
+		
+		
 	}
 
-	
-	
-	
-	
 }
