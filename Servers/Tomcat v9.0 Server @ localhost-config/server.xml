@@ -120,7 +120,7 @@
 			<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxIdle="30" maxTotal="100" maxWaitMillis="10000" name="jdbc/TestDB" password="0000" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/keduit" username="root"/>
 			</Context>
 			
-			</Host>
+		</Host>
 		</Engine>
 	</Service>
 </Server>

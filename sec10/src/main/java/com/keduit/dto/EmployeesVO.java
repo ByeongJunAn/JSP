@@ -1,5 +1,7 @@
 package com.keduit.dto;
 
+import java.sql.Timestamp;
+
 public class EmployeesVO {
 
 	public String getId() {
@@ -26,13 +28,13 @@ public class EmployeesVO {
 	public void setLev(String lev) {
 		this.lev = lev;
 	}
-	public int getEnter() {
+	public Timestamp getEnter() {
 		return enter;
 	}
-	public void setEnter(int enter) {
+	public void setEnter(Timestamp enter) {
 		this.enter = enter;
 	}
-	public boolean isGender() {
+	public boolean getGender() {
 		return gender;
 	}
 	public void setGender(boolean gender) {
@@ -59,7 +61,7 @@ public class EmployeesVO {
 	private String pass;
 	private String name;
 	private String lev;
-	private int enter;
+	private Timestamp enter;
 	private boolean gender;
 	private int phone;
 }
