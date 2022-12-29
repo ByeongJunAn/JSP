@@ -26,7 +26,7 @@ public class EmployeesCheckPassAction implements Action {
 			url="/employees/checkSuccess.jsp";
 			
 		}else {
-			url="/employees/employeesCheckPAss.jsp";
+			url="/employees/employeesCheckPass.jsp";
 			request.setAttribute("message", "비밀번호가 틀렸습니다.");
 		}
 		

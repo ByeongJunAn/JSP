@@ -9,7 +9,7 @@
 <body>
 	<div align="center">
 		<h1>비밀번호 확인</h1>
-		<form action="BoardServlet" name="frm" method="GET">
+		<form action="EmployeesServlet" name="frm" method="GET">
 			<input type="hidden" name="command" value="employees_check_pass">
 			<input type="hidden" name="num" value="${param.num}">
 			<table style="width: 80%" >

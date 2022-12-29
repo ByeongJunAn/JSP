@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>직원 목록 </title>
+<title>프로필 목록 </title>
 <link rel="stylesheet" type="text/css" href="css/shopping.css">
 
 </head>
 <body>
 <div id="wrap">
-	<h1>직원 목록</h1>
+	<h1>프로필 목록</h1>
 	<table class=list>
 		<tr>
 			<td colspan="8" style="border:white; text-align:right">
@@ -33,7 +33,7 @@
 		<c:forEach var="employees" items="${employeesList}">
 			<tr>
 				<td>${employees.id}</td>
-				<td><a href ="employeesServlet?command=employees_view&num=${board.num}">
+				<td><a href ="EmployeesServlet?command=employees_view&id=${employees.id}">
 				${employees.name}</a></td>
 				<td>${employees.lev}</td>
 				<td>${employees.enter}</td>

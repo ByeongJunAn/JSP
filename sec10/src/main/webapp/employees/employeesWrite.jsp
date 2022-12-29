@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="wrap" align="center">
-	<h1>정보 등록</h1>
+	<h1>프로필 등록</h1>
 	<form id="frm" method="post" action="EmployeesServlet">
 		<input type="hidden" name="command" value="employees_write">
 		<table>
@@ -42,7 +42,7 @@
 			</tr>
 			
 			<tr>
-				<th>휴대폰 번호</th>
+				<th>전화 번호</th>
 				<td><input type="number" name="phone"></td>
 			</tr>
 			

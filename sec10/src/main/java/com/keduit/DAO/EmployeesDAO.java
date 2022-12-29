@@ -121,7 +121,7 @@ public class EmployeesDAO {
 	
 		
 		//게시글 수정
-		public void updateBoard(EmployeesVO bVO) {
+		public void updateemployees(EmployeesVO bVO) {
 			String sql = "update board set pass=?, name=?, lev=?, enter=?, gender=?, phone=? where id=?";
 			Connection conn = null;
 			PreparedStatement pstmt = null;
@@ -148,7 +148,7 @@ public class EmployeesDAO {
 		}
 		
 						
-		public void deleteBoard(String id) {
+		public void deleteemployees(String id) {
 			String sql = "delete from employees where id=?";
 			Connection conn = null;
 			PreparedStatement pstmt= null;

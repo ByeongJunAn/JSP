@@ -2,18 +2,21 @@ package com.keduit.controller.action;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class EmployeesWriteFormAction implements Action {
+import com.keduit.DAO.EmployeesDAO;
+
+public class EmployeesDeleteAction implements Action {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "/employees/employeesWrite.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
-		dispatcher.forward(request, response);
+		String num = request.getParameter("num");
+		EmployeesDAO eDAO = EmployeesDAO.getInstance();
+		eDAO.deleteemployees(num);
+		new EmployeesListAction().excute(request, response);
+		
 	}
 
 }

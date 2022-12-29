@@ -19,10 +19,10 @@ public class EmployeesViewAction implements Action {
 		
 		String id = request.getParameter("id");
 		
-		EmployeesDAO eDAO = EmployeesDAO.getInstance();
-		eDAO.updateReadCount(id);
-		EmployeesVO eVO = eDAO.selectOneBoardByNum(id);
-		request.setAttribute("employees", eVO);
+//		EmployeesDAO eDAO = EmployeesDAO.getInstance();
+//		eDAO.updateReadCount(id);
+//		EmployeesVO eVO = eDAO.selectOneBoardById(id);
+//		request.setAttribute("employees", eVO);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
