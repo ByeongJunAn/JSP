@@ -24,8 +24,8 @@
 		<tr>
 			<th>아이디</th>
 			<th>이름</th>
-			<th>권한</th>
-			<th>엔터</th>
+			<th>직급</th>
+		
 			<th>성별</th>
 			<th>전화번호</th>
 		</tr>
@@ -36,7 +36,7 @@
 				<td><a href ="EmployeesServlet?command=employees_view&id=${employees.id}">
 				${employees.name}</a></td>
 				<td>${employees.lev}</td>
-				<td>${employees.enter}</td>
+				
 				<td>${employees.gender}</td>
 				<td>${employees.phone}</td>
 			</tr>

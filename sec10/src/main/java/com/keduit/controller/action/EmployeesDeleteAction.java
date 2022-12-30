@@ -12,9 +12,9 @@ public class EmployeesDeleteAction implements Action {
 
 	@Override
 	public void excute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String num = request.getParameter("num");
+		String id = request.getParameter("id");
 		EmployeesDAO eDAO = EmployeesDAO.getInstance();
-		eDAO.deleteemployees(num);
+		eDAO.deleteemployees(id);
 		new EmployeesListAction().excute(request, response);
 		
 	}

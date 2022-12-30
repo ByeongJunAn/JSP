@@ -42,7 +42,7 @@ public class EmployeesDAO {
 				eVO.setLev(rs.getString("lev"));
 				eVO.setEnter(rs.getString("enter"));
 				eVO.setGender(rs.getString("gender"));
-				eVO.setPhone(rs.getInt("phone"));
+				eVO.setPhone(rs.getString("phone"));
 				list.add(eVO);
 				
 				
@@ -60,7 +60,7 @@ public class EmployeesDAO {
 	}
 	
 	public void insertEmployees(EmployeesVO eVO) {
-		String sql = "insert into borad (" + "id, pass, name, lev, enter, gender, phone)" +
+		String sql = "insert into employees (" + "id, pass, name, lev, enter, gender, phone)" +
 											"values(?,?,?,?,?,?,?)";
 		
 		Connection conn = null;
@@ -76,7 +76,8 @@ public class EmployeesDAO {
 			pstmt.setString(4, eVO.getLev());
 			pstmt.setString(5, eVO.getEnter());
 			pstmt.setString(6, eVO.getGender());
-			pstmt.setInt(7, eVO.getPhone());
+			pstmt.setString(7, eVO.getPhone());
+			pstmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -86,10 +87,10 @@ public class EmployeesDAO {
 		
 	}
 	
-	//게시글 상세보기
-		public EmployeesVO selectOneEmployeesByID(String num) {
+	// 상세보기
+		public EmployeesVO selectOneEmployeesByID(String id) {
 			EmployeesVO bVO= null;
-			String sql = "select * from board where num = ?";
+			String sql = "select * from employees where id = ?";
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -97,7 +98,7 @@ public class EmployeesDAO {
 			try {
 				conn = DBManager.getConnection();
 				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, num);
+				pstmt.setString(1, id);
 				rs= pstmt.executeQuery();
 				
 				while(rs.next()) {
@@ -108,7 +109,9 @@ public class EmployeesDAO {
 					bVO.setLev(rs.getString("lev"));
 					bVO.setEnter(rs.getString("enter"));
 					bVO.setGender(rs.getString("gender"));
-					bVO.setPhone(rs.getInt("phone"));
+					bVO.setPhone(rs.getString("phone"));
+					
+					
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -120,9 +123,9 @@ public class EmployeesDAO {
 		}
 	
 		
-		//게시글 수정
+		// 수정
 		public void updateemployees(EmployeesVO bVO) {
-			String sql = "update board set pass=?, name=?, lev=?, enter=?, gender=?, phone=? where id=?";
+			String sql = "update employees set pass=?, name=?, lev=?, enter=?, gender=?, phone=? where id=?";
 			Connection conn = null;
 			PreparedStatement pstmt = null;
 			
@@ -134,7 +137,7 @@ public class EmployeesDAO {
 				pstmt.setString(3, bVO.getLev());
 				pstmt.setString(4, bVO.getEnter());
 				pstmt.setString(5, bVO.getGender());
-				pstmt.setInt(6, bVO.getPhone());
+				pstmt.setString(6, bVO.getPhone());
 				pstmt.setString(7, bVO.getId());
 		
 				pstmt.executeUpdate();
@@ -164,6 +167,8 @@ public class EmployeesDAO {
 				DBManager.close(conn, pstmt);
 			}
 		}
+
+		
 		
 	}
 

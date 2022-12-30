@@ -19,7 +19,7 @@ public class EmployeesWriteAction implements Action {
 		eVO.setName(request.getParameter("name"));
 		eVO.setLev(request.getParameter("lev"));
 		eVO.setGender(request.getParameter("gender"));
-		eVO.setPhone(Integer.parseInt(request.getParameter("phone")));
+		eVO.setPhone(request.getParameter("phone"));
 		
 		EmployeesDAO eDAO = EmployeesDAO.getInstance();
 		eDAO.insertEmployees(eVO);

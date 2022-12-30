@@ -9,7 +9,7 @@ import com.keduit.controller.action.BoardUpdateFormAction;
 import com.keduit.controller.action.BoardViewAction;
 import com.keduit.controller.action.BoardWriteAction;
 import com.keduit.controller.action.BoardWriteFormAction;
-import com.keduit.controller.action.boardDeleteAction;
+import com.keduit.controller.action.BoardDeleteAction;
 
 public class ActionFactory {
 	private static ActionFactory instance = new ActionFactory();
@@ -24,7 +24,6 @@ public class ActionFactory {
 	
 	public Action getAction(String command) {
 		Action action = null;
-		System.out.println("ActionFactory : " + command);
 		
 		if(command.equals("board_list")) {
 			action = new BoardListAction();
@@ -43,7 +42,7 @@ public class ActionFactory {
 		} else if(command.equals("board_update_form")) {
 			action = new BoardUpdateFormAction();
 		} else if(command.equals("board_delete")) {
-			action = new boardDeleteAction();
+			action = new BoardDeleteAction();
 		}
 		return action;
 		

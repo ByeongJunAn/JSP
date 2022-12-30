@@ -23,7 +23,7 @@
 			</tr>
 			
 			<tr>
-				<th>권한</th>
+				<th>직급</th>
 				<td>${employees.lev}</td>
 			
 				<th>입사일</th>
@@ -37,7 +37,7 @@
 			</tr>	
 			
 			<tr>
-				<th>번호</th>
+				<th>전화번호</th>
 				<td colspan ="3">${employees.phone}</td>
 			</tr>	
 		</table>
@@ -46,7 +46,7 @@
 		<input type="button" value="프로필 수정" onclick="open_win('EmployeesServlet?command=employees_check_pass_form&id=${employees.id}', 'update')">	
 		<input type="button" value="프로필 삭제" onclick="open_win('EmployeesServlet?command=employees_check_pass_form&id=${employees.id}', 'delete')">	
 		<input type="button" value="프로필 리스트" onclick="location.href='EmployeesServlet?command=employees_List'">	
-		<input type="button" value="프로필 등록" onclick="location.href='EmployeesServlet?command=employees_Write_form'">	
+		<input type="button" value="프로필 등록" onclick="location.href='EmployeesServlet?command=employees_write_form'">	
 		
 
 

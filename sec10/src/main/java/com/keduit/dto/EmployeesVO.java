@@ -39,10 +39,10 @@ public class EmployeesVO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	
@@ -62,5 +62,5 @@ public class EmployeesVO {
 	private String lev;
 	private String enter;
 	private String gender;
-	private int phone;
+	private String phone;
 }

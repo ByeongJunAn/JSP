@@ -1,4 +1,4 @@
-create table EMPLOYEES(
+create table employees(
 	id VARCHAR(10) NOT null primary key,
 	pass VARCHAR(10) NOT null,
 	name VARCHAR(24),
@@ -11,3 +11,5 @@ create table EMPLOYEES(
 insert into EMPLOYEES values("hong", "1234", "홍길동", "A", 20221228, "1", 01012345678 )
 
 select * from employees; 
+
+drop table EMPLOYEES;
